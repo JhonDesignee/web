@@ -15,10 +15,4 @@ function GenerateLogo() {
 }
 
 buttonInput.addEventListener("click", GenerateLogo)
-buttonDropDown1.addEventListener("click", () => {
-  window.open("https://jhondesignee.github.io/web/pages/decorador-de-texto-minecraft", "_self")
-})
-buttonDropDown2.addEventListener("click", () => {
-  window.open("https://jhondesignee.github.io/web/pages/gerador-de-link-whatsapp", "_self")
-})
 dropDownBackground.addEventListener("click", () => { dropDownCheckbox.checked = false })

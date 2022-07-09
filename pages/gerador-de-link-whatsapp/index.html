@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Crie links para contatos do WhatsApp com textos facilmente">
-  <title>Gerador de Link para WhatsApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <meta property="author" content="Jhon">
-  <meta property="og:url" content="https://jhonsome.github.io/html-css/projetos/gerador-de-link-whatsapp/">
+  <link rel="shortcut icon" href="https://jhondesignee.github.io/web/pages/favicon.ico">
+  <meta name="title" content="Gerador de link WhatsApp">
+  <meta name="description" content="Gera links personalizados para o seu número do WhatsApp">
+  <meta property="author" content="https://instagram.com/ai.que.delicinha">
+  <meta property="og:url" content="https://jhondesignee.github.io/web/pages/gerador-de-link-whatsapp">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Gerador de link WhatsApp">
-  <meta property="og:description" content="Crie links para contatos do WhatsApp com textos facilmente">
+  <meta property="og:description" content="Gera links personalizados para o seu número do WhatsApp">
   <meta property="og:locale" content="pt_BR">
-  <meta property="twitter:domain" content="jhonsome.github.io">
-  <meta property="twitter:url" content="https://jhonsome.github.io/html-css/projetos/gerador-de-link-whatsapp/">
+  <meta property="og:image" content="https://jhondesignee.github.io/web/pages/logo.jpg">
+  <meta property="twitter:domain" content="jhondesignee.github.io">
+  <meta property="twitter:url" content="https://jhondesignee.github.io/web/pages/gerador-de-link-whatsapp">
   <meta name="twitter:title" content="Gerador de link WhatsApp">
-  <meta name="twitter:description" content="Crie links para contatos do WhatsApp com textos facilmente">
-  <script src="main.js"></script>
+  <meta name="twitter:description" content="Gera links personalizados para o seu número do WhatsApp">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:image" content="https://jhondesignee.github.io/web/pages/logo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="script.js"></script>
+  <title>Gerador de link WhatsApp</title>
 </head>
+
 <body>
-	<header>
-		<h1>Gerador de link para WhatsApp</h1>
-	</header>
-	<nav>
-		<a href="https://jhonsome.github.io/web/">Home</a>
-	</nav>
-  <main>
-    <h2>Número de telefone</h2>
-    <hr>
-    <input type="tel" id="phone_input">
-    <h2>Texto</h2>
-    <hr>
-    <textarea id="text_input" rows="15"></textarea>
-    <h2>Link</h2>
-    <hr>
-    <div id="boxbutton">
-      <input type="button" value="gerar link" onclick="GenerateWhatsAppLink()">
-      <input type="button" value="&#x1F4CB;" onclick="CopyToClipboard(document.getElementById('link_output'))">
+  <header>
+    <h1>Gerador de link WhatsApp</h1>
+    <div class="dropdown">
+      <input type="checkbox" id="chk">
+      <label for="chk"></label>
+      <div class="background"></div>
+      <nav>
+        <ul>
+          <li><button>Decorador de texto Minecraft</button></li>
+          <li><button>Git Hub</button></li>
+        </ul>
+      </nav>
     </div>
-    <div id="output_link_div"></div>
-    <input id="link_output" hidden></input>
+  </header>
+  <main>
+      <input type="text" id="input-1" autocomplete="off" placeholder="N° celular (formato internacional)">
+      <textarea id="input-2" autocomplete="off" placeholder="Texto pré-definido (opcional)"></textarea>
+      <button>Gerar</button>
+      <input type="text" id="output" readonly>
   </main>
-  <footer>
-    <p>Site criado por <a href="https://instagram.com/jhon.something" target="_blank">Jhon</a></p>
-  </footer>
 </body>
+
 </html>

@@ -169,6 +169,18 @@ div.dropdown {
   position: relative;
 }
 
+div.dropdown > input[type=checkbox] {
+  display: none;
+}
+
+div.dropdown > nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  z-index: 2;
+}
+
 div.dropdown > div.background {
   display: none;
   position: fixed;
@@ -178,18 +190,6 @@ div.dropdown > div.background {
   width: 100vw;
   height: 100vh;
   background-color: #00000053;
-}
-
-div.dropdown > input[type=checkbox] {
-  display: none;
-}
-
-div.dropdown > div.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  white-space: nowrap;
-  z-index: 2;
 }
 
 div.dropdown > label {
@@ -219,17 +219,17 @@ div.dropdown > input[type=checkbox]:checked ~ label:after {
   transition: 300ms ease-out;
 } 
 
-div.dropdown > input[type=checkbox]:checked ~ :is(div.dropdown-content, div.background) {
+div.dropdown > input[type=checkbox]:checked ~ :is(nav, div.background) {
   display: block;
 }
 
-div.dropdown > div.dropdown-content > ul {
+div.dropdown > nav > ul {
   border-radius: 0;
   padding: 1rem;
   width: 100%;
 } 
 
-div.dropdown > div.dropdown-content > ul button {
+div.dropdown > nav > ul button {
   font-size: 1rem;
   background-color: transparent;
   margin: 0;
@@ -237,6 +237,6 @@ div.dropdown > div.dropdown-content > ul button {
   text-align: left;
 } 
 
-div.dropdown > div.dropdown-content > ul button:after {
+div.dropdown > nav > ul button:after {
   border-radius: 0;
 } 

@@ -1,0 +1,20 @@
+:root {
+  --padding-size: 1rem;
+  --margin-size: 1rem;
+  --font-size: 18px;
+  --font-family: Arial;
+}
+
+body[data-theme="light"], body {
+  --color-1: #57ABFF;
+  --color-2: #2B2B2B;
+  --color-3: #484848;
+  --color-font: white;
+}
+
+body[data-theme="dark"] {
+  --color-1: #57ABFF;
+  --color-2: #2B2B2B;
+  --color-3: #484848;
+  --color-font: white;
+}
