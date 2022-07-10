@@ -1,4 +1,4 @@
-const redirect = true
+const redirect = false
 
 if (redirect) {
   location.replace("maintenance.html")
