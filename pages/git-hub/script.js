@@ -1,18 +1,17 @@
-const buttonInput = document.querySelector("button#input-button")
-const buttonDropDown1 = document.querySelectorAll("div.dropdown button")[0]
-const buttonDropDown2 = document.querySelectorAll("div.dropdown button")[1]
-const dropDownBackground = document.querySelector("div.dropdown div.background")
-const dropDownCheckbox = document.querySelector("div.dropdown input[type=checkbox]")
+const l_input = document.querySelector("input#input-1")
+const r_input = document.querySelector("input#input-2")
+const l_output = document.querySelectorAll("div.output p")[0]
+const r_output = document.querySelectorAll("div.output p")[1]
+const button = document.querySelector("button#input-button")
 
-function GenerateLogo() {
-	const input1 = document.querySelector("input#input-1")
-	const input2 = document.querySelector("input#input-2")
-	const lside = document.querySelector("div.container > p:first-child")
-	const rside = document.querySelector("div.container > p:last-child")
-	
-	lside.innerText = input1.value.trim()
-	rside.innerText = input2.value.trim()
+function generateLogo() {
+  let l_input_value = l_input.value.trim()
+  let r_input_value = r_input.value.trim()
+  
+  if (l_input_value.length || r_input_value.length) {
+    l_output.innerText = l_input_value
+    r_output.innerText = r_input_value
+  }
 }
 
-buttonInput.addEventListener("click", GenerateLogo)
-dropDownBackground.addEventListener("click", () => { dropDownCheckbox.checked = false })
+button.addEventListener("click", generateLogo)

@@ -62,7 +62,7 @@ main > *:first-child {
 input, textarea {
   width: 100%;
   height: 3rem;
-  font-size: calc(var(--font-size) * 2);
+  font-size: calc(var(--font-size) * 1.5);
   border: none;
   border-bottom: 2px solid grey;
   background-color: transparent;
@@ -70,7 +70,7 @@ input, textarea {
   color: var(--font-color);
   caret-color: var(--color-1);
   padding: var(--padding-size);
-  padding-left: calc(var(--padding-size) / 2);
+  padding-left: calc(var(--padding-size) / 1.5);
   transition: 300ms ease-in-out;
 }
 
@@ -91,6 +91,10 @@ input:focus {
   transition: 300ms ease-in-out;
 }
 
+input:oninvalid {
+  border-bottom-color: red;
+}
+
 textarea {
   height: auto;
   font-size: calc(var(--font-size) * 1.5);
@@ -107,10 +111,10 @@ textarea:focus {
 button {
   position: relative;
   width: 100%;
-  font-size: calc(var(--font-size) * 2);
-  padding: var(--padding-size);
+  font-size: calc(var(--font-size) * 1.5);
+  padding: var(--font-size);
   border: none;
-  border-radius: calc(var(--font-size) * 2);
+  border-radius: var(--font-size);
   color: var(--color-font);
   background-color: var(--color-1);
 }
@@ -125,13 +129,6 @@ button::before {
   border-radius: inherit;
   background-color: white;
   opacity: 0;
-  transition: 100ms ease-in-out;
-}
-
-button:hover::before {
-  left: 0;
-  width: 100%;
-  opacity: 0.2;
   transition: 100ms ease-in-out;
 }
 
@@ -174,6 +171,15 @@ a:is([target="_blank"], [target="_parent"]):after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   padding-left: 2px;
+}
+
+a > span {
+  display: block;
+  color: var(--color-1);
+}
+
+a > span:first-child {
+  color: var(--font-color);
 }
 
 ul {
@@ -261,6 +267,7 @@ div.dropdown nav {
   padding: var(--padding-size);
   background-color: var(--color-3);
   box-shadow: 0 0 5px #000000A8;
+  border-radius: var(--font-size);
 }
 
 div.dropdown a {

@@ -79,12 +79,18 @@
     </div>
     <div class="container">
       <h1>Estamos fazendo alguns ajustes...</h1>
+      <p>A página <strong></strong> está com probleminhas :/ Volte mais tarde</p>
       <div id="contact">
         <p>Contato:</p>
         <a target="_blank" href="https://wa.me/message/O2NSJ44ZIVUEF1">WhatsApp</a>
         <a target="_blank" href="https://instagram.com/ai.que.delicinha">Instagram</a>
+        <a target="_blank" href="https://t.me/jhonuxu">Telegram</a>
       </div>
     </div>
   </main>
+  <script>
+    let paragraph = document.querySelector("strong")
+    paragraph.innerText = sessionStorage.getItem("current_url")
+  </script>
 </body>
 </html>
