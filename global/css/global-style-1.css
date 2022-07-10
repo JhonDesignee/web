@@ -179,6 +179,9 @@ a:is([target="_blank"], [target="_parent"]):after {
 ul {
   list-style-type: none;
   width: 100%;
+  background-color: var(--color-3);
+  padding: 0 var(--padding-size);
+  border-radius: var(--font-size);
 }
 
 ul li {
@@ -187,6 +190,11 @@ ul li {
 
 ul li:last-child {
   border-bottom: none;
+}
+
+ul li a {
+  display: block;
+  padding: var(--padding-size);
 }
 
 div.dropdown {
