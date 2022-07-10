@@ -180,7 +180,7 @@ ul {
   list-style-type: none;
   width: 100%;
   background-color: var(--color-3);
-  padding: 0 var(--padding-size);
+  padding: calc(var(--font-size) / 2) var(--padding-size);
   border-radius: var(--font-size);
 }
 

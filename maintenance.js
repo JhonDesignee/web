@@ -1,5 +1,5 @@
-const redirect = true
+const redirect = true 
 
 if (redirect) {
-  location.replace("maintenance.html")
+  window.location = "maintenance.html"
 }
