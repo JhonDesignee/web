@@ -1,4 +1,4 @@
-const redirect = false
+const redirect = true 
 
 if (redirect) {
   sessionStorage.setItem("current_url", window.location.href)
