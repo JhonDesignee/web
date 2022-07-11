@@ -13,6 +13,7 @@ div.output {
 }
 
 div.output p {
+  color: white;
   white-space: nowrap;
 }
 

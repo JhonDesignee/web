@@ -1,3 +1,26 @@
+@keyframes invalid-input {
+  0%, 32.2%, 66.4% {
+    transform: translateX(-10px);
+  }
+  
+  16.6%, 49.8%, 83% {
+    transform: translateX(10px);
+  }
+  
+  100% {
+    transform: translateX(0);
+  }
+}
+
+:is(input, textarea).invalid-input {
+  border-color: red;
+  animation: invalid-input 400ms ease-out;
+}
+
+:is(input, textarea).invalid-input::placeholder {
+  color: red;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -51,11 +74,11 @@ footer {
   box-shadow: 0 -2px 5px #000000B0;
 }
 
-main > * {
+:is(main, form) > * {
   margin-top: var(--margin-size);
 }
 
-main > *:first-child {
+:is(main, form) > *:first-child {
   margin-top: 0;
 }
 
@@ -91,8 +114,10 @@ input:focus {
   transition: 300ms ease-in-out;
 }
 
-input:oninvalid {
-  border-bottom-color: red;
+input[readonly] {
+  border: 1px solid grey;
+  border-radius: var(--font-size);
+  background-color: var(--color-3);
 }
 
 textarea {
@@ -108,7 +133,7 @@ textarea:focus {
   transition: 300ms ease-in-out;
 }
 
-button {
+button, button[data-primary] {
   position: relative;
   width: 100%;
   font-size: calc(var(--font-size) * 1.5);
@@ -118,6 +143,20 @@ button {
   color: var(--color-font);
   background-color: var(--color-1);
 }
+
+button[data-secondary] {
+  background-color: transparent;
+  border: 2px solid var(--color-1);
+  color: var(--color-1);
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+button[disabled]::before {
+  all: initial;
+} 
 
 button::before {
   content: "";
@@ -143,6 +182,15 @@ a {
   position: relative;
   text-decoration: none;
   color: var(--font-color);
+  font-weight: 900;
+}
+
+a[data-tertiary] {
+  display: block;
+  width: 100%;
+  padding: calc(var(--font-size) / 2);
+  font-weight: 900;
+  text-align: center;
 }
 
 a:is([target="_blank"], [target="_parent"]) {

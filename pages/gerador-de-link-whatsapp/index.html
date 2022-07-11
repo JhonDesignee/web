@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <script src="/maintenance.js"></script>
+  <script src="../../maintenance.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,20 +13,17 @@
   <meta property="og:title" content="Gerador de link WhatsApp">
   <meta property="og:description" content="Gera links para o seu contato do WhatsApp">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://jhondesignee.github.io/web/global/media/logo.jpg">
+  <meta property="og:image" content="https://jhondesignee.github.io/web/media/logo.jpg">
   <meta property="twitter:domain" content="jhondesignee.github.io">
   <meta property="twitter:url" content="https://jhondesignee.github.io/web/pages/gerador-de-link-whatsapp">
   <meta name="twitter:title" content="Gerador de link WhatsApp">
   <meta name="twitter:description" content="Gera links para o seu contato do WhatsApp">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:image" content="https://jhondesignee.github.io/web/global/media/logo.jpg">
+  <meta property="twitter:image" content="https://jhondesignee.github.io/web/media/logo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="/global/css/global-style-1.css">
-  <link rel="stylesheet" href="/global/settings/settings-1.css">
-  <link rel="shortcut icon" href="https://jhondesignee.github.io/web/global/media/favicon.ico">
+  <link rel="shortcut icon" href="https://jhondesignee.github.io/web/media/favicon.ico">
   <script defer src="script.js"></script>
-  <script defer src="/global/javascript/global-javascript-1.js"></script>
+  <script defer src="../../framework/main.js"></script>
   <title>Gerador de link WhatsApp</title>
 </head>
 <body data-theme="dark">
@@ -46,12 +43,11 @@
     </div>
   </header>
   <main>
-    <input type="text" id="input-1" autocomplete="off" data-lpignore="true" placeholder="Número de telefone" required>
-    <button id="input-button">Gerar</button>
-    <div class="output">
-      <p>Git</p>
-      <p>Hub</p>
-    </div>
+    <input type="text" id="phone-number" autocomplete="off" data-lpignore="true" placeholder="N° telefone (formato internacional)" required pattern="^[\d]+$">
+    <textarea id="text" rows="10" placeholder="Mensagem (opcional)"></textarea>
+    <button id="generate" type="submit">Gerar</button>
+    <button id="clipboard" data-secondary>Copiar</button>
+    <input type="text" id="output" readonly>
   </main>
 </body>
 </html>
