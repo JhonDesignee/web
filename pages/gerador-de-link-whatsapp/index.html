@@ -22,8 +22,8 @@
   <meta property="twitter:image" content="https://jhondesignee.github.io/web/media/logo.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="https://jhondesignee.github.io/web/media/favicon.ico">
-  <script defer src="script.js"></script>
   <script defer src="../../framework/main.js"></script>
+  <script defer src="script.js"></script>
   <title>Gerador de link WhatsApp</title>
 </head>
 <body data-theme="dark">
@@ -43,7 +43,8 @@
     </div>
   </header>
   <main>
-    <input type="text" id="phone-number" autocomplete="off" data-lpignore="true" placeholder="N° telefone (formato internacional)" required pattern="^[\d]+$">
+    <input type="tel" id="phone-number" autocomplete="off" data-lpignore="true" placeholder="N° telefone (formato internacional)" required pattern="^[\d]+$">
+    <label for="phone-number">Número de telefone</label>
     <textarea id="text" rows="10" placeholder="Mensagem (opcional)"></textarea>
     <button id="generate" type="submit">Gerar</button>
     <button id="clipboard" data-secondary>Copiar</button>

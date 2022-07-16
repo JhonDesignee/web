@@ -12,15 +12,6 @@
   }
 }
 
-:is(input, textarea).invalid-input {
-  border-color: red;
-  animation: invalid-input 400ms ease-out;
-}
-
-:is(input, textarea).invalid-input::placeholder {
-  color: red;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -57,6 +48,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--margin-size);
   height: 100%;
   overflow-y: auto;
   padding: var(--padding-size);
@@ -74,12 +66,31 @@ footer {
   box-shadow: 0 -2px 5px #000000B0;
 }
 
-:is(main, form) > * {
+/*main > * {
   margin-top: var(--margin-size);
 }
 
-:is(main, form) > *:first-child {
+main > *:first-child {
   margin-top: 0;
+}*/
+
+div.input-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+div.input-container > label {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-left: var(--padding-size);
+  font-size: calc(var(--font-size) * 1.5);
+  transition: 300ms ease-in-out;
 }
 
 input, textarea {
@@ -113,6 +124,25 @@ input:focus {
   opacity: 0.5;
   transition: 300ms ease-in-out;
 }
+
+:is(input, textarea):is(:focus, :not(:placeholder-shown)) + label {
+  height: 30%;
+  font-size: calc(var(--font-size) / 1.1);
+  transform: translateY(calc(-1 * var(--font-size) / 2));
+}
+
+:is(input, textarea).invalid-input {
+  border-color: red;
+  animation: invalid-input 400ms ease-out;
+}
+
+:is(input, textarea).invalid-input::placeholder {
+  color: red;
+}
+
+:is(input, textarea).invalid-input + label {
+  color: red;
+} 
 
 input[readonly] {
   border: 1px solid grey;
@@ -253,6 +283,8 @@ ul li a {
 
 div.dropdown {
   position: relative;
+  height: calc(var(--font-size) * 2);
+  width: calc(var(--font-size) * 2);
 }
 
 div.dropdown input[type=checkbox] {
@@ -261,10 +293,12 @@ div.dropdown input[type=checkbox] {
 
 div.dropdown label {
   display: block;
+  top: 0;
+  left: 0;
   position: relative;
+  width: 100%;
+  height: 100%;
   z-index: 3;
-  height: calc(var(--font-size) * 2);
-  width: calc(var(--font-size) * 2);
 }
 
 div.dropdown label::before {
