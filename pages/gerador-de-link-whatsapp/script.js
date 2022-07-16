@@ -5,15 +5,16 @@ let copy_button = document.querySelector("button#clipboard")
 let link_output = document.querySelector("input#output")
 
 function copyToClipboard(input) {
-  console.log(navigator.clipboard)
-  if (! (navigator.clipboard === undefined)) {
+  if (input.value == 0) {
+    Framework.toast(3, "Entrada inválida!")
+  } else if (! (navigator.clipboard === undefined)) {
     navigator.clipboard.writeText(input.value).then(() => {
-      Framework.toast(0, "foi tranquilo")
+      Framework.toast(0, "Link copiado!")
     }, () => {
-      Framework.toast(3, "deu ruim")
+      Framework.toast(3, "Erro inesperado")
     })
   } else {
-    Framework.toast(3, "deu ruim")
+    Framework.toast(3, "Não foi possível copiar o link!")
   }
 }
 
@@ -30,4 +31,7 @@ function generateWhatsAppLink() {
 }
 
 generate_button.addEventListener("click", generateWhatsAppLink)
-copy_button.addEventListener("click", () => { copyToClipboard(link_output) })
+copy_button.addEventListener("click", () => { 
+  generateWhatsAppLink()
+  copyToClipboard(link_output)
+})
