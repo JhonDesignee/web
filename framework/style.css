@@ -87,11 +87,12 @@ div.input-container > label {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  padding-left: var(--padding-size);
-  padding-top: calc(var(--padding-size) / 2);
+  padding: 2px;
+  margin-left: var(--padding-size);
+  margin-top: calc(var(--padding-size) / 2);
   font-size: calc(var(--font-size) * 1.5);
   transition: 300ms ease-in-out;
+  background-color: var(--color-2);
 }
 
 input, textarea {
@@ -127,9 +128,8 @@ input:focus {
 }
 
 :is(input, textarea):is(:focus, :not(:placeholder-shown)) + label {
-  height: 30%;
-  font-size: calc(var(--font-size) / 1.1);
-  transform: translateY(calc(-1 * var(--font-size) / 2));
+  font-size: calc(var(--font-size) / 1.2);
+  top: calc(-1 * (var(--font-size) * 1.3) + 4px);
 }
 
 :is(input, textarea).invalid-input {
@@ -358,4 +358,82 @@ div.dropdown a {
   white-space: nowrap;
   color: var(--color-font);
   padding: var(--padding-size);
+}
+
+div.toast-container {
+  display: none;
+  flex-direction: column;
+  gap: var(--font-size);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: var(--padding-size);
+}
+
+div.toast {
+  display: flex;
+  gap: calc(var(--font-size) / 2);
+  max-width: 75vw;
+  position: relative;
+  padding: var(--padding-size);
+  background-color: var(--color-3);
+  border-radius: calc(var(--font-size) / 2);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: 300ms ease-in;
+}
+
+div.toast > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.toast > i {
+  padding: calc(var(--font-size) / 2);
+}
+
+div.toast::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: calc(-1 * var(--font-size) / 2);
+  width: calc(100% + var(--font-size) / 2);
+  height: 100%;
+  border-radius: calc(var(--font-size) / 2);
+  box-shadow: 0 0 5px #000000A8;
+}
+
+div.toast.ok::before {
+  background-color: lime;
+}
+
+div.toast.info::before {
+  background-color: skyblue;
+}
+
+div.toast.warning::before {
+  background-color: orange;
+}
+
+div.toast.error::before {
+  background-color: red;
+}
+
+div.toast.ok i {
+  color: lime;
+}
+
+div.toast.info i {
+  color: skyblue;
+}
+
+div.toast.warning i {
+  color: orange;
+}
+
+div.toast.error i {
+  color: red;
 }

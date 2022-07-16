@@ -4,6 +4,7 @@ class Framework {
     this.#requiredInput()
     this.#dropdownMenu()
     this.#labelInput()
+    this.#toastInit()
   }
 
   #loadMainCss() {
@@ -57,7 +58,14 @@ class Framework {
       }
     })
   }
-
+  
+  #toastInit() {
+    let container = document.createElement("div")
+    let main = document.querySelector("main")
+    container.classList.add("toast-container")
+    main.appendChild(container)
+  }
+  
   static testInputPattern(input) {
     let pattern = input.hasAttribute("pattern") ? input.pattern : input.hasAttribute("data-pattern") ? input.dataset.pattern : ".+"
     let re = new RegExp(pattern, "g")
@@ -69,7 +77,47 @@ class Framework {
   }
 
   static toast(type, message, milliseconds = 3000) {
-    console.log(message)
+    let container = document.querySelector("div.toast-container")
+    let toast = document.createElement("div")
+    let div_l = document.createElement("div")
+    let div_r = document.createElement("div")
+    let text = document.createElement("p")
+    let icon = document.createElement("i")
+    let close = document.createElement("i")
+    icon.classList.add("fa-solid", "fa-circle-exclamation")
+    text.textContent = message.trim()
+    close.classList.add("fa-solid", "fa-circle-xmark")
+    close.addEventListener("click", () => {
+      toast.remove()
+    })
+    let class_type 
+    switch (type) {
+      case 0:
+        class_type = "ok"
+        break
+      case 1:
+        class_type = "info"
+        break
+      case 2:
+        class_type = "warning"
+        break
+      case 3:
+        class_type = "error"
+        break
+      default:
+        class_type = "info"
+    }
+    toast.classList.add("toast", class_type)
+    div_l.appendChild(icon)
+    toast.appendChild(div_l)
+    div_r.appendChild(text)
+    toast.appendChild(div_r)
+    toast.appendChild(close)
+    container.appendChild(toast)
+    window.setTimeout(() => {
+      toast.remove()
+    }, milliseconds)
+    container.style.display = "flex"
   }
 }
 

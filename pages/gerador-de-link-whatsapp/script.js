@@ -8,10 +8,9 @@ function copyToClipboard(input) {
   console.log(navigator.clipboard)
   if (! (navigator.clipboard === undefined)) {
     navigator.clipboard.writeText(input.value).then(() => {
-      Framework.toast(3, "foi tranquilo")
+      Framework.toast(0, "foi tranquilo")
     }, () => {
       Framework.toast(3, "deu ruim")
-      console.log("a")
     })
   } else {
     Framework.toast(3, "deu ruim")
