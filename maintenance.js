@@ -1,4 +1,4 @@
-const redirect = false 
+let redirect = false 
 
 if (redirect) {
   let link = document.querySelector("script[src*=maintenance]").getAttribute("src")
